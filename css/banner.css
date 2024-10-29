@@ -110,6 +110,7 @@
     text-transform:capitalize;
     color:#fff;
     width:400px;
+    margin-top: 200px;
   }
   
   
@@ -140,7 +141,7 @@
   }
   
   
-  header .content .shopNow{
+  header .content .shopNow {
     background:var(--white);
     color:var(--orange);
   }
