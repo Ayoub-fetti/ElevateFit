@@ -29,7 +29,7 @@
     
         document.addEventListener("DOMContentLoaded", function() {
             // Sélection des éléments HTML
-            const addToCartButton = document.querySelector(".btn"); // Bouton "Add To Cart"
+            const addToCartButton = document.querySelector(".btn"); 
             const quantityInput = document.querySelector("input[type='number']"); // Champ de quantité
             const productPriceElement = document.getElementById("product-price"); // Prix unitaire du produit
             const navTotalPrice = document.querySelector("nav .menu-bar li"); // Prix total dans la barre de navigation
@@ -62,4 +62,25 @@
         });
         
      /*--------------------- afficher les details de chaque produit  ---------------------------*/
+     function goToProduct(product) {
+        localStorage.setItem('selectedProduct', JSON.stringify(product));
+         window.location.href = 'product-detail.html';
+    }
+    
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const product = JSON.parse(localStorage.getItem('selectedProduct'));
+        if (product) {
+            document.getElementById('product-cat').innerText = product.cat;
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('product-img').src = product.img;
+            document.getElementById('product-price').innerText = product.price;y
+        }
+        
+    
+        
+    });
+/*-----------------------------------------------------------------------------*/
+
+
    
