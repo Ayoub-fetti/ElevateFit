@@ -1,4 +1,47 @@
-// JS for Single product detail
+/*---------------------filtre by category-------------------*/       
+document.getElementById("categorySelect").addEventListener("change", function () {
+    const selectedCategory = this.value;
+    const products = document.querySelectorAll(".col-4");
+
+    products.forEach(product => {
+        const category = product.getAttribute("data-category");
+
+        if (selectedCategory === "all" || category === selectedCategory) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+});
+
+/*----------------filtrer par prix------------------*/
+
+
+document.getElementById("minPrice").addEventListener("input", function () {
+    document.getElementById("minPriceValue").textContent = this.value + "$";
+});
+document.getElementById("maxPrice").addEventListener("input", function () {
+    document.getElementById("maxPriceValue").textContent = this.value + "$";
+});
+
+document.getElementById("applyFilter").addEventListener("click", function () {
+    const minPrice = parseInt(document.getElementById("minPrice").value, 10);
+    const maxPrice = parseInt(document.getElementById("maxPrice").value, 10);
+    const products = document.querySelectorAll(".col-4");
+
+    products.forEach(product => {
+        const productPrice = parseInt(product.getAttribute("data-price"), 10);
+
+        if (productPrice >= minPrice && productPrice <= maxPrice) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+});
+         
+
+/*----------------------JS for Single product detail-------------------------*/ 
 
 
         var ProductImg = document.getElementById("product-img");//larger image
