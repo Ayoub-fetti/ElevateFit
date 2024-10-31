@@ -16,53 +16,111 @@
 
     </head>
 <body>
-
-
-    <header>
+    <header class="header-class">
+      
         <nav id="nav">
-                  
-            <a href="index.html"><img src="images/logo-white.png" class="logo"></a>
-            
-            <ul class="menu-bar-side">
-              <li><a href="index.html" style=" all: unset;">Home</a></li>
-              <li><a href="Products.html" style=" all: unset;">Shope</a></li>
-              <li><a href="#" style=" all: unset;">about</a></li>
-              <li><a href="#" style=" all: unset;">contact us</a></li>
-              <li><a href="#" style=" all: unset;">Wishlist</a></li>
-          </ul>
+          
+          <a href="index.html"><img src="images/logo-white.png" class="logo"></a>
+          
+          <ul class="menu-bar-side">
+            <li><a href="index.html" style=" all: unset;">Home</a></li>
+            <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+            <li><a href="#" style=" all: unset;">about</a></li>
+            <li><a href="#" style=" all: unset;">contact us</a></li>
+            <li><a href="#" style=" all: unset;">Wishlist</a></li>
+        </ul>
 
-          <ul class="menu-bar">
+        <ul class="menu-bar">
 
-              <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+            <li>&#36;0.00</li>
+            <li><a href="cart.html" style="all: unset;"><i class="fas fa-shopping-cart"></i></a></li>
 
-          </ul>
-            
-            <i class="fa fa-bars"></i>
-          </nav>
-    </header>
+        </ul>
+          
+          <i class="fa fa-bars"></i>
+        </nav>
+   
+  </header>
 
-              <main>
-            <div class="cart-container">
-                <h1>Shopping Cart</h1>
-                <div class="cart-items">
-                    <!-- Cart items will be dynamically added here -->
-                </div>
-                
-                <div class="cart-summary">
-                    <div class="summary-item">
-                        <span>Subtotal</span>
-                        <span id="subtotal">$0.00</span>
+   <!------Card items details ----->
+  <main class="cart-main">
+    
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="images/buy-1.jpg" alt="">
+                    <div>
+                        <p>Red Printed Tshirt</p>
+                        <small>price: $50.00</small><br>
+                        <a href="">Remove</a>
+
                     </div>
-                    <hr>
-                    <div class="summary-item total">
-                        <span>Total</span>
-                        <span id="total">$0.00</span>
-                    </div>
-                    <button class="checkout-btn">Proceed to Checkout</button>
                 </div>
-            </div>
-              </main>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>$50.00</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="images/product-2.jpg" alt="">
+                    <div>
+                        <p>Black Shoes</p>
+                        <small>price: $200.00</small><br>
+                        <a href="">Remove</a>
+
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>$200.00</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="images/buy-3.jpg" alt="">
+                    <div>
+                        <p>Gray Pant</p>
+                        <small>price: $80.00</small><br>
+                        <a href="">Remove</a>
+
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>$80.00</td>
+        </tr>
+    </table>
+
+    <div class="total-price">
+      
+        <table>
+            <tr>
+                <td>
+                    Total
+                </td>
+                <td>$200.00</td>
+            </tr>
+
+        </table>
+
+    </div>
+    <div class="div-button">
+        <a href="checkout.html"><button class="Checkout-bouton">Confirm Purchase </button></a>
+    </div>
+</div>
+  </main>
+
 
    <footer>
     <div class="footer">
@@ -104,7 +162,7 @@
         </div>
     </div>
    </footer>
-   <script>
+   <!-- <script>
     function afficherPanier() {
         const panier = JSON.parse(localStorage.getItem('panier')) || [];
         const cartItemsContainer = document.querySelector(".cart-items");
@@ -134,6 +192,6 @@
     // Charger le panier au chargement de la page
     document.addEventListener('DOMContentLoaded', afficherPanier);
     </script>
- 
+  -->
 </body>
 </html>
