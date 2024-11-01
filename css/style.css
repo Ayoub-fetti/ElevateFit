@@ -283,46 +283,6 @@ ul{
     color: #fff;
 }
 
-/*-----------media query for menu-------------*/
-
-.menu-icon{
-    width: 28px;/*width of menu icon image*/
-    margin-left: 20px;
-    display: none;/*initially menu icon image will not be visible on any screen*/
-}
-/*we have to display menu icon for small screens only and hide it for larger screens*/
-
-/*menu icon will be visible for width of page less than 800px, above 800px or larger screen it will not be visible and we get navbar */
-@media only screen and (max-width:800px){
-    nav ul{/*for whole dropdown menu chart*/
-        /* position: absolute;
-        top: 70px;
-        left: 0;
-        background: #333;
-        width: 100%; */
-        /* overflow: hidden;before applying this, we were getting menu links open, so to clipped or close them and to work them only when clicked, we use overflow hidden */
-        /* transition: max-Height 0.5s;this will make dropdown menu to open with little bit delay and make it stylish */
-        display: inline-block;
-        list-style-type: none;
-   
-    }
-    nav ul li{/*for home contacts etc*/
-        display: block;
-        margin-right: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-    }
-    nav ul li a{/*dropdown menu link color would be white*/
-        color: #fff;
-    }
-    .menu-icon{/*we again call menu icon in smaller screen, before smaller screen, we set display none, means initially it was not visible for any screen, but now it will be visible for smaller screens as we set display to block*/
-        display:block;
-        cursor: pointer; 
-    }
-
-}
-
 
 /*----------------------------------------------------*/
 
@@ -664,5 +624,6 @@ input[type="range"]{
     margin-top: 30px;
     margin-right: 15px;
 }
+
 
 

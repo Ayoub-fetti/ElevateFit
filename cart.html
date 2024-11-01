@@ -37,7 +37,6 @@
 
         </ul>
           
-          <i class="fa fa-bars"></i>
         </nav>
    
   </header>
@@ -52,8 +51,8 @@
             <th>Quantity</th>
             <th>Subtotal</th>
         </tr>
-
-        <tr>
+        <tbody id="cart-items">
+        <!-- <tr>
             <td>
                 <div class="cart-info">
                     <img src="images/buy-1.jpg" alt="">
@@ -68,23 +67,9 @@
             <td>$50.00</td>
         </tr>
 
-        <!-- <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="images/product-2.jpg" alt="">
-                    <div>
-                        <p>Black Shoes</p>
-                        <small>price: $200.00</small><br>
-                        <a href="">Remove</a>
+      
 
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$200.00</td>
-        </tr> -->
-
-        <!-- <tr>
+        <tr>
             <td>
                 <div class="cart-info">
                     <img src="images/buy-3.jpg" alt="">
@@ -99,6 +84,7 @@
             <td><input type="number" value="1"></td>
             <td>$80.00</td>
         </tr> -->
+        </tbody>
     </table>
 
     <div class="total-price">
@@ -167,8 +153,63 @@
      </script>
    </footer>
    <!----------------JS-------------------->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Récupérer les produits du localStorage
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-items");
+    let totalPrice = 0;
+
+    // Afficher chaque produit
+    cart.forEach(product => {
+        const subtotal = product.price * product.quantity;
+        totalPrice += subtotal;
+
+        const productHTML = `
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div>
+                            <p>${product.name}</p>
+                            <small>price: $${product.price}</small><br>
+                            <a href="#" onclick="removeFromCart('${product.name}')">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="${product.quantity}" min="1" onchange="updateQuantity('${product.name}', this.value)"></td>
+                <td>$${subtotal.toFixed(2)}</td>
+            </tr>
+        `;
+        cartContainer.innerHTML += productHTML;
+    });
+
+    // Mettre à jour le total
+    document.querySelector(".total-price table td:last-child").textContent = `$${totalPrice.toFixed(2)}`;
+});
+
+// Fonction pour supprimer un produit
+function removeFromCart(productName) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter(item => item.name !== productName);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload();
+}
+
+// Fonction pour mettre à jour la quantité
+function updateQuantity(productName, newQuantity) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const product = cart.find(item => item.name === productName);
+    if (product) {
+        product.quantity = parseInt(newQuantity);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        location.reload();
+    }
+}
+</script>
    <script src="js/script.js"></script>
    <script src="js/main.js"></script>
+   <script src="js/panier.js"></script>
 
 </body>
 </html>
