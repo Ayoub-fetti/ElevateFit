@@ -1,3 +1,6 @@
+/* fonction pour ajouter le produit choiser dans la page cart.html */
+
+
 
 function ajouterAuPanier() {
     // Récupérer les informations du produit
