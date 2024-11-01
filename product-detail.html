@@ -59,6 +59,7 @@
 
                 <div class="col-2">
                      <img src="images/gallery-1.jpg" width="100%" id="product-img">
+                     
             
                      <div class="small-img-row">
                          
@@ -99,8 +100,8 @@
                     </select>
                     
                     <!--no of products-->
-                    <input type="number" value="1">
-                    <a href="cart.html" class="btn" onclick="ajouterAuPanier()">Add To Cart</a>                    
+                    <input type="number" value="1" min="1">
+                    <a href="#" class="btn" onclick="ajouterAuPanier()">Add To Cart</a>                    
                     <h3>Product Details <i class="fa fa-indent" aria-hidden="true"></i></h3>
                     <br>
                     <p id="product-description">Give Your summer wardrobe a style upgrade with the HTX Men's 
@@ -125,9 +126,9 @@
 
     
        <div class="row">
-           <div class="col-4">
+           <div class="col-4 product">
                <img src="Images/product-9.jpg">
-               <h4>Red Printed T-shirt</h4>
+               <h4>Darck Blue Watch</h4>
                <div class="rating">
                   <i class="fa fa-star" aria-hidden="true"></i>
                   <i class="fa fa-star" aria-hidden="true"></i>
@@ -135,12 +136,13 @@
                   <i class="fa fa-star" aria-hidden="true"></i>
                   <i class="fa fa-star-o" aria-hidden="true"></i>
                </div>
-               <p>$50.00</p>
+               <p>$300.00</p>
+               <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
            </div>
 
-           <div class="col-4">
+           <div class="col-4 product">
               <img src="Images/product-10.jpg">
-              <h4>Red Printed T-shirt</h4>
+              <h4>Black and Red Shoes</h4>
               <div class="rating">
                  <i class="fa fa-star" aria-hidden="true"></i>
                  <i class="fa fa-star" aria-hidden="true"></i>
@@ -148,12 +150,13 @@
                  <i class="fa fa-star" aria-hidden="true"></i>
                  <i class="fa fa-star-o" aria-hidden="true"></i>
               </div>
-              <p>$50.00</p>
+              <p>$200.00</p>
+              <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
           </div>
 
-          <div class="col-4">
+          <div class="col-4 product">
               <img src="Images/product-11.jpg">
-              <h4>Red Printed T-shirt</h4>
+              <h4>Grey and White Shoes</h4>
               <div class="rating">
                  <i class="fa fa-star" aria-hidden="true"></i>
                  <i class="fa fa-star" aria-hidden="true"></i>
@@ -161,12 +164,13 @@
                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
                  <i class="fa fa-star-o" aria-hidden="true"></i>
               </div>
-              <p>$50.00</p>
+              <p>$200.00</p>
+              <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
           </div>
 
-          <div class="col-4">
+          <div class="col-4 product">
               <img src="Images/product-12.jpg">
-              <h4>Red Printed T-shirt</h4>
+              <h4>Grey Pant</h4>
               <div class="rating">
                  <i class="fa fa-star" aria-hidden="true"></i>
                  <i class="fa fa-star" aria-hidden="true"></i>
@@ -175,7 +179,8 @@
                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
               </div>
-              <p>$50.00</p>
+              <p>$80.00</p>
+              <button class="add-to-cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Card</button>
           </div>
        </div>
        
@@ -234,27 +239,9 @@
     </div>         
 
     <!-----------------JS----------------------->
-    <script>
-        // function ajouterAuPanier() {
-            const productName = document.getElementById("product-name").textContent;
-            const productPrice = parseFloat(document.getElementById("product-price").textContent.replace('$', ''));
-        
-            // Récupérer le panier existant ou créer un panier vide
-            let panier = JSON.parse(localStorage.getItem('panier')) || [];
-        
-            // Ajouter le produit au panier
-            panier.push({ nom: productName, prix: productPrice });
-        
-            // Enregistrer le panier dans localStorage
-            localStorage.setItem('panier', JSON.stringify(panier));
-        
-           
-        }
-      
-
-
-        </script>
 <script src="js/script.js"></script>
+<script src="js/main.js"></script>
+
 
     
     </body>

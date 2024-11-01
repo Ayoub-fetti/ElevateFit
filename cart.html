@@ -61,11 +61,10 @@
                         <p>Red Printed Tshirt</p>
                         <small>price: $50.00</small><br>
                         <a href="">Remove</a>
-
                     </div>
                 </div>
             </td>
-            <td><input type="number" value="1"></td>
+            <td><input type="number" value="1" min="1"></td>
             <td>$50.00</td>
         </tr>
 
@@ -161,37 +160,15 @@
             <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const products = JSON.parse(localStorage.getItem(""))
+        })
+     </script>
    </footer>
-   <!-- <script>
-    function afficherPanier() {
-        const panier = JSON.parse(localStorage.getItem('panier')) || [];
-        const cartItemsContainer = document.querySelector(".cart-items");
-        let subtotal = 0;
-    
-        cartItemsContainer.innerHTML = '';  // Vider l'élément avant d'ajouter des articles
-    
-        panier.forEach(item => {
-            const itemElement = document.createElement("div");
-            itemElement.classList.add("cart-item");
-            itemElement.innerHTML = `
-                <span>${item.nom}</span>
-                <span>$${item.prix.toFixed(2)}</span>
-            `;
-            cartItemsContainer.appendChild(itemElement);
-            subtotal += item.prix;
-        });
-    
-        // Mettre à jour le sous-total, taxe, et total
-        const total = subtotal;
-    
-        document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
-        
-        document.getElementById("total").textContent = `$${total.toFixed(2)}`;
-    }
-    
-    // Charger le panier au chargement de la page
-    document.addEventListener('DOMContentLoaded', afficherPanier);
-    </script>
-  -->
+   <!----------------JS-------------------->
+   <script src="js/script.js"></script>
+   <script src="js/main.js"></script>
+
 </body>
 </html>

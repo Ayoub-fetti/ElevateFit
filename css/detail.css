@@ -39,6 +39,7 @@
     overflow: hidden;
     z-index: 122;
     background-color: rgb(7, 7, 7);
+    margin-bottom: 100px;
   }
   
   header nav .fa-bars,
